@@ -1,0 +1,200 @@
+/* src/App.css */
+
+/* Body styling */
+body {
+  background-color: #1a1a1a; /* Dark background for cyberpunk feel */
+  color: #f0f0f0; /* Light text color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Game container */
+.game {
+  text-align: center;
+}
+
+/* Heading styling */
+h1 {
+  color: #00ffff; /* Bright cyan */
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* Button styling */
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #003366; /* Dark blue */
+  color: #00ffff; /* Bright cyan */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-shadow: 0 0 5px #00ffff;
+  box-shadow: 0 0 5px #00ffff;
+}
+
+button:hover {
+  background-color: #005580; /* Slightly lighter blue */
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Controls container */
+.controls {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #f0f0f0;
+}
+
+/* Range input styling */
+input[type='range'] {
+  width: 200px;
+  -webkit-appearance: none;
+  background: transparent;
+  margin-left: 10px;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 10px;
+  background: #00ffff;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00ffff;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 5px;
+  background: #003366;
+  border-radius: 5px;
+}
+
+/* Game area styling */
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Grid styling */
+.grid {
+  display: grid;
+  justify-content: center;
+  position: relative;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  border: solid 1px #333; /* Dark border */
+  transition: background-color 0.5s, box-shadow 0.3s, transform 0.5s;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 5px; /* Soften the cell appearance */
+  transform-style: preserve-3d;
+}
+
+.cell.alive {
+  box-shadow: 0 0 5px #00ff00; /* Green glow */
+  animation: pulse 2s infinite;
+  transform: rotateY(180deg); /* 3D rotation */
+}
+
+.cell.mature {
+  box-shadow: 0 0 5px #ff00ff; /* Magenta glow */
+  transform: rotateY(360deg); /* 3D rotation */
+}
+
+.cell:hover {
+  box-shadow: 0 0 10px #00ffff; /* Cyan glow */
+}
+
+/* Cell animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px #00ff00;
+  }
+  50% {
+    box-shadow: 0 0 15px #00ff00;
+  }
+  100% {
+    box-shadow: 0 0 5px #00ff00;
+  }
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  background-color: #003366;
+  color: #00ffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-shadow: 0 0 5px #00ffff;
+  box-shadow: 0 0 5px #00ffff;
+}
+
+.grid:hover .tooltip {
+  opacity: 1;
+}
+
+/* Rules column styling */
+.rules-column {
+  margin-left: 20px;
+  color: #f0f0f0;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.emoji {
+  font-size: 2em;
+  margin-right: 10px;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.pattern {
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-gap: 1px;
+}
+
+.pattern-cell {
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border: solid 1px #666;
+  border-radius: 5px;
+  transform-style: preserve-3d;
+}
+
+.pattern-cell.active {
+  background-color: #ff00ff; /* Magenta color for active cells */
+  box-shadow: 0 0 5px #ff00ff;
+  transform: rotateY(360deg); /* 3D rotation */
+  transition: background-color 0.5s, transform 0.5s;
+}
+
+/* Speed control container */
+.speed-control {
+  margin-top: 10px;
+}

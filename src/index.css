@@ -1,0 +1,7 @@
+/* src/index.css */
+
+/* Global styles */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
